@@ -24,7 +24,11 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "src/firebase/config.ts",
+    "src/firebase/config.ts",
+    "src/composables/getCollection.ts",
+    "src/composables/getCollection.ts"
   ],
   "exclude": ["node_modules"]
 }
