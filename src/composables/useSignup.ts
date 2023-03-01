@@ -4,9 +4,11 @@ import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
 import { AuthSignUpProps } from './_types'
 
 const error = ref(null)
+const isPending = ref(false)
 
 const signup = async ({ email, password, displayName }: AuthSignUpProps) => {
   error.value = null
+  isPending.value = true
 
   try {
     const res = await createUserWithEmailAndPassword(
@@ -18,8 +20,10 @@ const signup = async ({ email, password, displayName }: AuthSignUpProps) => {
         updateProfile(res.user, {
           displayName: displayName,
         })
+        isPending.value = false
         error.value = null
       } else {
+        isPending.value = false
         throw new Error('Algo deu errado na hora de criar sua conta :(')
       }
     })
@@ -32,7 +36,7 @@ const signup = async ({ email, password, displayName }: AuthSignUpProps) => {
 }
 
 const useSignup = () => {
-  return { error, signup }
+  return { error, signup, isPending }
 }
 
 export default useSignup

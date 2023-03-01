@@ -6,22 +6,28 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 type AuthLoginProps = Omit<AuthSignUpProps, 'displayName'>
 
 const error = ref<null | string>(null)
+const isPending = ref(false)
 
 const login = async ({ email, password }: AuthLoginProps) => {
   error.value = null
+  isPending.value = true
 
   try {
     const res = await signInWithEmailAndPassword(projectAuth, email, password)
     error.value = null
+    isPending.value = false
+
     return res
   } catch (err: any) {
     console.log(err.message)
+    isPending.value = false
+
     error.value = 'Incorrect login credentials'
   }
 }
 
 const useLogin = () => {
-  return { error, login }
+  return { error, login, isPending }
 }
 
 export default useLogin
