@@ -14,7 +14,6 @@ const logout = async () => {
     await projectAuth.signOut()
     isPending.value = false
   } catch (err: any) {
-    console.log(err.message)
     isPending.value = false
     error.value = err.message
   }
