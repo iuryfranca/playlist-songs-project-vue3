@@ -19,10 +19,8 @@ const login = async ({ email, password }: AuthLoginProps) => {
 
     return res
   } catch (err: any) {
-    console.log(err.message)
     isPending.value = false
-
-    error.value = 'Incorrect login credentials'
+    error.value = err.message
   }
 }
 
