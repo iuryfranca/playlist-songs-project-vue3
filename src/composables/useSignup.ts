@@ -30,7 +30,7 @@ const signup = async ({ email, password, displayName }: AuthSignUpProps) => {
 
     return res
   } catch (err: any) {
-    console.log(err.message)
+    isPending.value = false
     error.value = err.message
   }
 }

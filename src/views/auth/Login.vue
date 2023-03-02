@@ -1,13 +1,15 @@
 <template>
-  <form @submit.prevent="handleSubmit">
-    <h3 class="font-bold">Login</h3>
-    <input type="email" placeholder="Email" v-model="email" />
-    <input type="password" placeholder="Password" v-model="password" />
-    <div v-if="error" class="error">{{ error }}</div>
-    <button :disabled="isPending">
-      {{ isPending ? 'Entrando...' : 'Entrar' }}
-    </button>
-  </form>
+  <div class="mt-16">
+    <form @submit.prevent="handleSubmit">
+      <h3 class="font-bold">Login</h3>
+      <input type="email" placeholder="Email" v-model="email" />
+      <input type="password" placeholder="Password" v-model="password" />
+      <div v-if="error" class="error">{{ error }}</div>
+      <button :disabled="isPending">
+        {{ isPending ? 'Entrando...' : 'Entrar' }}
+      </button>
+    </form>
+  </div>
 </template>
 
 <script setup lang="ts">
