@@ -17,6 +17,11 @@ const routes: Array<RouteRecordRaw> = [
     name: 'Registro',
     component: () => import('@/views/auth/Singup.vue'),
   },
+  {
+    path: '/playlists/create',
+    name: 'Create playlist',
+    component: () => import('@/views/playlists/CreatePlaylist.vue'),
+  },
 ]
 
 const router = createRouter({
