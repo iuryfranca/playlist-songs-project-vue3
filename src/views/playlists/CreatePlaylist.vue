@@ -28,6 +28,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import useStorage from '@/composables/useStorage'
+
+const { filePath, uploadImage, url } = useStorage()
 
 const title = ref<string>('')
 const description = ref<string>('')
@@ -35,8 +38,9 @@ const file = ref<any>(null)
 const error = ref<null | string>(null)
 const fileError = ref<null | string>(null)
 
-const handleSubmit = () => {
-  console.log(title.value, description.value)
+const handleSubmit = async () => {
+  await uploadImage(file.value)
+  console.log('Imagem uploaded', url.value)
 }
 
 // allowed file types
