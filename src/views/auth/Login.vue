@@ -14,6 +14,7 @@
 
 <script setup lang="ts">
 import useLogin from '@/composables/useLogin'
+import router from '@/router'
 import { ref } from 'vue'
 import { Options } from 'vue-class-component'
 
@@ -27,7 +28,9 @@ const email = ref('')
 const password = ref('')
 
 const handleSubmit = async () => {
-  await login({ email: email.value, password: password.value })
+  await login({ email: email.value, password: password.value }).then(() =>
+    router.push('/')
+  )
   if (!error.value) {
     alert('User Logged in successfully')
   }

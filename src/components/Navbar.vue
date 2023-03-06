@@ -1,5 +1,3 @@
-import { RouterLink } from 'vue-router';
-
 <template>
   <div class="container p-7 flex items-center bg-white">
     <nav class="flex justify-between w-full">
@@ -30,7 +28,6 @@ import { RouterLink } from 'vue-router';
 import useLogout from '@/composables/useLogout'
 import getUser from '@/composables/getUser'
 import { useRouter } from 'vue-router'
-
 import { Options } from 'vue-class-component'
 
 Options({

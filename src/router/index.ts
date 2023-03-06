@@ -1,11 +1,29 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
+import {
+  createRouter,
+  createWebHistory,
+  RouteLocationNormalized,
+  RouteRecordRaw,
+} from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { projectAuth } from '@/firebase/config'
+import { render } from 'vue'
+
+const requireAuth = (
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized,
+  next: Function
+) => {
+  let user = projectAuth.currentUser
+  if (!user) next({ name: 'Login' })
+  else next()
+}
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
     component: HomeView,
+    beforeEnter: requireAuth,
   },
   {
     path: '/login',
@@ -21,6 +39,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/playlists/create',
     name: 'CreatePlaylist',
     component: () => import('@/views/playlists/CreatePlaylist.vue'),
+    beforeEnter: requireAuth,
   },
 ]
 

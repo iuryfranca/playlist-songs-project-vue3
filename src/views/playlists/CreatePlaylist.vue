@@ -1,5 +1,5 @@
 <template>
-  <form class="max-w-[450px]" @submit.prevent="handleSubmit">
+  <form class="max-w-[450px] mt-16" @submit.prevent="handleSubmit">
     <h3 class="font-bold">Criar nova playlist</h3>
     <input type="text" required placeholder="Título" v-model="title" />
     <textarea
