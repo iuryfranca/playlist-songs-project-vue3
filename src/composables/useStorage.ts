@@ -19,8 +19,8 @@ const useStorage = () => {
     const storageRef = refStorage(projectStorage, filePath.value)
 
     try {
-      await uploadBytes(storageRef, file).then((res) => {
-        url.value = getDownloadURL(res.ref)
+      await uploadBytes(storageRef, file).then(async (res) => {
+        url.value = await getDownloadURL(res.ref)
       })
     } catch (err: any) {
       console.log(err.message)

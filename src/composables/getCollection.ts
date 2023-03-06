@@ -1,9 +1,9 @@
 import { ref, watchEffect } from 'vue'
 import { projectFirestore } from '../firebase/config'
 
-import { collection, onSnapshot, orderBy, query, doc } from 'firebase/firestore'
+import { collection, orderBy, query, getDocs } from 'firebase/firestore'
 
-const getCollection = (collectionPath: any) => {
+const getCollection = async (collectionPath: any) => {
   const documents = ref<any>(null)
   const error = ref<null | string>(null)
 
@@ -13,12 +13,21 @@ const getCollection = (collectionPath: any) => {
     orderBy('createdAt')
   )
 
-  console.log('collectionRef', collectionRef)
+  const snapshotData = await getDocs(collectionRef)
 
-  const unsub = onSnapshot(doc(projectFirestore, collectionPath), (snap) => {
+  const unsub = () => {
     let results: any = []
-    console.log('snap.data()', snap.data())
-  })
+    snapshotData.docs.map((doc) => {
+      doc.data() && results.push({ ...doc.data(), id: doc.id })
+    }),
+      (documents.value = results)
+    error.value = null
+  }
+  ;(err: any) => {
+    console.log(err.message)
+    documents.value = null
+    error.value = err.message
+  }
 
   // const unsubEx = collectionRef.onSnapshot(
   //   (snap) => {
