@@ -3,3 +3,18 @@ export interface AuthSignUpProps {
   password: string
   displayName: string
 }
+
+export interface PlaylistData {
+  coverUrl: string
+  createdAt: string
+  description: string
+  filePath: string
+  songs: string[]
+  title: string
+  userId: string
+  userName: string
+}
+
+export interface PlaylistDataHomeList extends PlaylistData {
+  id: string
+}

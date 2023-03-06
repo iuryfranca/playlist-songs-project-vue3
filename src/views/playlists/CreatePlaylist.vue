@@ -47,13 +47,14 @@ const handleSubmit = async () => {
   await addDoc({
     title: title.value,
     description: description.value,
-    userId: user.value?.uid,
-    userName: user.value?.displayName,
+    userId: user.value!.uid,
+    userName: user.value?.displayName || 'Nome não cadastrado',
     coverUrl: url.value,
-    filePath: filePath.value,
+    filePath: filePath.value || 'Path não encontrado',
     songs: [],
-    createdAt: timestampNow,
+    createdAt: timestampNow.toString(),
   })
+
   isPending.value = false
   if (!error.value) {
     console.log('Playlist Criada')
