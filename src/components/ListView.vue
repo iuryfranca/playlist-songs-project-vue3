@@ -21,7 +21,7 @@
 </template>
 
 <script setup lang="ts">
-import type { PlaylistDataHomeList } from '@/composables/_types'
+import type { PlaylistDataList } from '@/composables/_types'
 import { formatLongDate } from '@/libs/utils'
 import { PropType } from 'vue'
 import { Options } from 'vue-class-component'
@@ -32,7 +32,7 @@ Options({
 
 defineProps({
   playlists: {
-    type: Object as PropType<PlaylistDataHomeList[]>,
+    type: Object as PropType<PlaylistDataList[]>,
   },
 })
 </script>

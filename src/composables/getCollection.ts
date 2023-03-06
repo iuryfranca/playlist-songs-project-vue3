@@ -1,11 +1,11 @@
-import { PlaylistDataHomeList } from './_types'
+import { PlaylistDataList } from './_types'
 import { ref, watchEffect } from 'vue'
 import { projectFirestore } from '../firebase/config'
 
 import { collection, orderBy, query, getDocs } from 'firebase/firestore'
 
 const getCollection = (collectionPath: string) => {
-  const documents = ref<PlaylistDataHomeList[] | null>(null)
+  const documents = ref<PlaylistDataList[] | null>(null)
   const error = ref<null | string>(null)
 
   // register the firestore collection reference

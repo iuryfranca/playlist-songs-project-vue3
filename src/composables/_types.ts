@@ -15,6 +15,6 @@ export interface PlaylistData {
   userName: string
 }
 
-export interface PlaylistDataHomeList extends PlaylistData {
+export interface PlaylistDataList extends PlaylistData {
   id: string
 }
