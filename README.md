@@ -34,7 +34,6 @@ The following technologies were used in the project:
 ## :fire: Features
 
 - [RequireAuth]: Requires login to access site routes
-- [Typescript]: Migrate all js composables to ts files
 
 ## :white_check_mark: Requirements
 
