@@ -23,7 +23,6 @@ const useStorage = () => {
         url.value = await getDownloadURL(res.ref)
       })
     } catch (err: any) {
-      console.log(err.message)
       error.value = err.message
     }
   }

@@ -16,6 +16,11 @@
 <script setup lang="ts">
 import useSignup from '@/composables/useSignup'
 import { ref } from 'vue'
+import { Options } from 'vue-class-component'
+
+Options({
+  name: 'Signup',
+})
 
 const { error, signup, isPending } = useSignup()
 
@@ -30,7 +35,7 @@ const handleSubmit = async () => {
     displayName: displayName.value,
   })
   if (!error.value) {
-    console.log('User Logged in successfully')
+    alert('Login feito com sucesso')
   }
 }
 </script>

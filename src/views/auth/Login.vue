@@ -15,6 +15,11 @@
 <script setup lang="ts">
 import useLogin from '@/composables/useLogin'
 import { ref } from 'vue'
+import { Options } from 'vue-class-component'
+
+Options({
+  name: 'Login',
+})
 
 const { error, login, isPending } = useLogin()
 
@@ -22,9 +27,9 @@ const email = ref('')
 const password = ref('')
 
 const handleSubmit = async () => {
-  const res = await login({ email: email.value, password: password.value })
+  await login({ email: email.value, password: password.value })
   if (!error.value) {
-    console.log('User Logged in successfully')
+    alert('User Logged in successfully')
   }
 }
 </script>

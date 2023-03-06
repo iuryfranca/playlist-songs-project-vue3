@@ -24,7 +24,6 @@ const getCollection = (collectionPath: string) => {
       error.value = null
     },
     (err: any) => {
-      console.log(err.message)
       documents.value = null
       error.value = err.message
     }

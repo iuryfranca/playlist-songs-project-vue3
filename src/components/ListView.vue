@@ -20,6 +20,11 @@
 import type { PlaylistDataHomeList } from '@/composables/_types'
 import { formatLongDate } from '@/libs/utils'
 import { PropType } from 'vue'
+import { Options } from 'vue-class-component'
+
+Options({
+  name: 'ListView',
+})
 
 defineProps({
   playlists: {

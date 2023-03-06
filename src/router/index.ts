@@ -4,7 +4,7 @@ import HomeView from '../views/HomeView.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
+    name: 'Home',
     component: HomeView,
   },
   {
@@ -14,12 +14,12 @@ const routes: Array<RouteRecordRaw> = [
   },
   {
     path: '/signup',
-    name: 'Registro',
-    component: () => import('@/views/auth/Singup.vue'),
+    name: 'Signup',
+    component: () => import('@/views/auth/Signup.vue'),
   },
   {
     path: '/playlists/create',
-    name: 'Create playlist',
+    name: 'CreatePlaylist',
     component: () => import('@/views/playlists/CreatePlaylist.vue'),
   },
 ]

@@ -30,6 +30,11 @@ import useStorage from '@/composables/useStorage'
 import useCollection from '@/composables/useCollection'
 import getUser from '@/composables/getUser'
 import { timestampNow } from '@/firebase/config'
+import { Options } from 'vue-class-component'
+
+Options({
+  name: 'CreatePlaylist',
+})
 
 const { filePath, uploadImage, url } = useStorage()
 const { addDoc, error } = useCollection('playlists')
@@ -57,9 +62,9 @@ const handleSubmit = async () => {
 
   isPending.value = false
   if (!error.value) {
-    console.log('Playlist Criada')
+    alert('Playlist Criada')
   } else {
-    console.log('Alguma coisa de errado aconteceu')
+    alert('Alguma coisa de errado aconteceu')
   }
 }
 
