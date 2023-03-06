@@ -29,7 +29,7 @@ const password = ref('')
 
 const handleSubmit = async () => {
   await login({ email: email.value, password: password.value }).then(() =>
-    router.push('/')
+    router.push({ name: 'Home' })
   )
   if (!error.value) {
     alert('User Logged in successfully')

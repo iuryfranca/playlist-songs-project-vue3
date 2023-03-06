@@ -41,6 +41,13 @@ const routes: Array<RouteRecordRaw> = [
     component: () => import('@/views/playlists/CreatePlaylist.vue'),
     beforeEnter: requireAuth,
   },
+  {
+    path: '/playlists/:id',
+    name: 'PlaylistDetails',
+    component: () => import('@/views/playlists/PlaylistDetails.vue'),
+    beforeEnter: requireAuth,
+    props: true,
+  },
 ]
 
 const router = createRouter({

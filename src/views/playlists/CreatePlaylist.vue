@@ -31,6 +31,10 @@ import useCollection from '@/composables/useCollection'
 import getUser from '@/composables/getUser'
 import { timestampNow } from '@/firebase/config'
 import { Options } from 'vue-class-component'
+import type { DocumentData, DocumentReference } from '@firebase/firestore'
+import router from '@/router'
+
+type DocumentReferenceProps = typeof DocumentReference
 
 Options({
   name: 'CreatePlaylist',
@@ -59,13 +63,17 @@ const handleSubmit = async () => {
     songs: [],
     createdAt: timestampNow.toString(),
   })
-
-  isPending.value = false
-  if (!error.value) {
-    alert('Playlist Criada')
-  } else {
-    alert('Alguma coisa de errado aconteceu')
-  }
+    .then((res: any) => {
+      alert('Playlist Criada')
+      router.push({ name: 'PlaylistDetails', params: { id: res.id } })
+    })
+    .catch((err: any) => {
+      error.value = err.message
+      console.log('ERROR: ', error)
+    })
+    .finally(() => {
+      isPending.value = false
+    })
 }
 
 // allowed file types

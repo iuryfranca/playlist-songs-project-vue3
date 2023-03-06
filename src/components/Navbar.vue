@@ -40,6 +40,6 @@ const router = useRouter()
 
 const handleClickLogout = async () => {
   await logout()
-  router.push('/login')
+  router.push({ name: 'Login' })
 }
 </script>

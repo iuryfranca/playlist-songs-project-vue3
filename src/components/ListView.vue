@@ -1,18 +1,22 @@
 <template>
   <div v-for="playlist in playlists" :key="playlist.id">
-    <div class="transition flex items-center p-5 rounded-lg bg-white my-4 mx-0">
-      <div class="max-w-[150px] max-h-[150px] overflow-hidden rounded-lg">
-        <img class="block" :src="playlist.coverUrl" :alt="playlist.title" />
+    <router-link :to="{ name: 'PlaylistDetails', params: { id: playlist.id } }">
+      <div
+        class="transition flex items-center p-5 rounded-lg bg-white my-4 mx-0"
+      >
+        <div class="max-w-[150px] max-h-[150px] overflow-hidden rounded-lg">
+          <img class="block" :src="playlist.coverUrl" :alt="playlist.title" />
+        </div>
+        <div class="my-0 mx-7">
+          <h3 class="font-semibold">{{ playlist.title }}</h3>
+          <p>{{ playlist.userName }}</p>
+          <p>{{ formatLongDate(playlist.createdAt) }}</p>
+        </div>
+        <div class="ml-auto">
+          <p>{{ playlist.songs.length }}</p>
+        </div>
       </div>
-      <div class="my-0 mx-7">
-        <h3 class="font-semibold">{{ playlist.title }}</h3>
-        <p>{{ playlist.userName }}</p>
-        <p>{{ formatLongDate(playlist.createdAt) }}</p>
-      </div>
-      <div class="ml-auto">
-        <p>{{ playlist.songs.length }}</p>
-      </div>
-    </div>
+    </router-link>
   </div>
 </template>
 
