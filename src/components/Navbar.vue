@@ -1,5 +1,5 @@
 <template>
-  <div class="container p-7 flex items-center bg-white">
+  <div class="p-7 flex items-center bg-white">
     <nav class="flex justify-between w-full">
       <h2 class="gap-2 font-bold">
         <RouterLink :to="{ name: 'Home' }">Playlists Songs</RouterLink>
