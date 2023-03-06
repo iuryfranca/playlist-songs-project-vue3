@@ -18,7 +18,7 @@
 </p>
 
 <p>
-  The purpose of the application is to manage music and playlists, all with data entry and management via firebase. Both the authentication part and the part of uploading images and data to firebase.
+  The purpose of the application is to manage music and playlists, all with data entry and management via firebase. Both the authentication part and the part of uploading images and data to storage.
 </p>
    
     
@@ -50,7 +50,7 @@ $ git clone https://github.com/iuryfranca/playlist-songs-project-vue3.git
 $ yarn install
 
 # Run the project
-$ yarn dev
+$ yarn serve
 
-# The server will initialize in the <http://localhost:3000>
+# The server will initialize in the <http://localhost:8080>
 ```
