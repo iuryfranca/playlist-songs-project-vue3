@@ -13,8 +13,9 @@
 
 ## :dart: About
 
-Project of a course that teaches how to use firebase to create, edit, delete and fetch data + authentication. All using vue3 + typescript on my own. :D
-
+    This project is being taught in a course I'm taking, but when developing it, I'm modifying some things like [javascritpt => typescript] and [classic css => tailwindcss].
+    The purpose of the application is to manage music and playlists, all with data entry and management via firebase. Both the authentication part and the part of uploading images and data to firebase.
+    
 ## :rocket: Techs
 
 The following technologies were used in the project:
@@ -22,6 +23,11 @@ The following technologies were used in the project:
 - [@vue3](https://vuejs.org/)
 - [@tailwindcss](https://tailwindcss.com/)
 - [@firebase](https://firebase.google.com/)
+
+## :fire: Features
+
+- [RequireAuth]: Requires login to access site routes
+- [Typescript]: Migrate all js composables to ts files
 
 ## :white_check_mark: Requirements
 
