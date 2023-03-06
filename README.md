@@ -4,7 +4,8 @@
 
 <p align="center">
   <a href="#dart-about">About</a> &#xa0; | &#xa0; 
-  <a href="#rocket-techs">Dependencies</a> &#xa0; | &#xa0;
+  <a href="#rocket-techs">Techs</a> &#xa0; | &#xa0;
+  <a href="#fire-features">Features</a> &#xa0; | &#xa0;
   <a href="#white_check_mark-requirements">Requirements</a> &#xa0; | &#xa0;
   <a href="#checkered_flag-getting-started">Getting Started</a> &#xa0; &#xa0;
 </p>
